@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public Animator am;
     private HealthSystem healthSystem;
     private HungerSystem hungerSystem;
+    private Backpack backpack;
+    public UIManager UIManager;
     void Start()
     {
         Vector3 moveDirection = Vector3.zero;
@@ -22,16 +24,24 @@ public class Player : MonoBehaviour
         healthSystem = GetComponent<HealthSystem>(); 
         hungerSystem = GetComponent<HungerSystem>();
         hungerSystem.SetHealthSystem(healthSystem);
+        backpack = GetComponent<Backpack>();
     }
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("Food"))
+        /*if (hit.gameObject.CompareTag("Food"))
         {
             var food = hit.gameObject.GetComponent<Food>();
             Destroy(hit.gameObject);
             healthSystem.IncreaseHealth(food.health); 
             hungerSystem.DecreaseHungerLevel(food.hunger);
 
+        }*/
+        if (hit.gameObject.CompareTag("Item"))
+        {
+            if (backpack.AddItem(hit.gameObject))
+            {
+                Destroy(hit.gameObject);
+            }
         }
         else if (hit.gameObject.CompareTag("Obstacle"))
         {
@@ -84,5 +94,9 @@ public class Player : MonoBehaviour
         cc.Move(moveDirection * speed * Time.deltaTime);
         var magnitude = new Vector2(cc.velocity.x, cc.velocity.y).magnitude;
         am.SetFloat("speed", magnitude);
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            UIManager.ToggleInventory();
+        }
     }
 }
