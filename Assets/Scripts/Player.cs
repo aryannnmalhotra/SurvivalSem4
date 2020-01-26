@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
             speed *= 2;
             am.SetBool("canRun", true);
         }
-        if (Input.GetKeyUp(KeyCode.RightShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed /= 2;
             am.SetBool("canRun", false);
