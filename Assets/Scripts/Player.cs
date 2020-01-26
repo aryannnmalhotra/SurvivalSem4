@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         am.SetFloat("speed",cc.velocity.magnitude);
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed *= 2;
             am.SetBool("canRun", true);
