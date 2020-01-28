@@ -26,6 +26,30 @@ public class Player : MonoBehaviour
         hungerSystem.SetHealthSystem(healthSystem);
         backpack = GetComponent<Backpack>();
     }
+    public  void Consume(Item item)
+    {
+        var foodData = item.Data as FoodData;
+        Debug.Log(foodData);
+        if (foodData != null)
+        {
+            healthSystem.IncreaseHealth(foodData.health);
+            hungerSystem.DecreaseHungerLevel(foodData.hunger);
+        }
+    }
+    public  void Drop(GameObject dropped)
+    {
+        var go = Instantiate(dropped) as GameObject;
+        var spawnPoint = transform.position + (transform.forward * 10);
+        spawnPoint.y += 1000;
+        var ray = new Ray(spawnPoint, Vector3.down);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit))
+        {
+            Debug.Log(hit.point);
+            spawnPoint.y = hit.point.y + go.transform.localScale.y * 0.5f;
+        }
+        go.transform.position = spawnPoint;
+    }
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         /*if (hit.gameObject.CompareTag("Food"))
@@ -38,9 +62,12 @@ public class Player : MonoBehaviour
         }*/
         if (hit.gameObject.CompareTag("Item"))
         {
-            if (backpack.AddItem(hit.gameObject))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Destroy(hit.gameObject);
+                if (backpack.AddItem(hit.gameObject))
+                {
+                    Destroy(hit.gameObject);
+                }
             }
         }
         else if (hit.gameObject.CompareTag("Obstacle"))

@@ -38,10 +38,26 @@ public class Backpack : MonoBehaviour
             return false;
         }
     }
+    public void ReduceCount(Item k)
+    {
+        mapNameToCount[k.Data.Name]--;
+    }
+    public void ReduceWeight(Item k)
+    {
+        currentWeight -= k.Data.Weight;
+    }
     public Sprite GetSprite(string name)
     {
         if (mapNameToObject.ContainsKey(name))
             return mapNameToObject[name].GetComponent<Item>().Data.Sprite;
+
+        return null;
+    }
+
+    public ItemData GetItemData(string name)
+    {
+        if (mapNameToObject.ContainsKey(name))
+            return mapNameToObject[name].GetComponent<Item>().Data;
 
         return null;
     }

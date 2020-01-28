@@ -20,4 +20,4 @@ MonoBehaviour:
   - Eat
   - Drop
   hunger: 100
-  health: 10
+  health: 15
