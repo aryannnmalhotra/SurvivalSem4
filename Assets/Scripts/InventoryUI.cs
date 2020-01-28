@@ -118,6 +118,7 @@ public class InventoryUI : MonoBehaviour
                     player.Consume(rendered.GetComponent<Item>());
                     Backpack.ReduceWeight(rendered.GetComponent<Item>());
                     Backpack.ReduceCount(rendered.GetComponent<Item>());
+                    Refresh();
                 }
             }
         }
@@ -136,6 +137,7 @@ public class InventoryUI : MonoBehaviour
                     player.Drop(pineapple);
                     Backpack.ReduceWeight(rendered.GetComponent<Item>());
                     Backpack.ReduceCount(rendered.GetComponent<Item>());
+                    Refresh();
                 }
             }
         }
@@ -149,6 +151,7 @@ public class InventoryUI : MonoBehaviour
                     player.Drop(rawMeat);
                     Backpack.ReduceWeight(rendered.GetComponent<Item>());
                     Backpack.ReduceCount(rendered.GetComponent<Item>());
+                    Refresh();
                 }
             }
         }
@@ -162,6 +165,7 @@ public class InventoryUI : MonoBehaviour
                     player.Drop(gun);
                     Backpack.ReduceWeight(rendered.GetComponent<Item>());
                     Backpack.ReduceCount(rendered.GetComponent<Item>());
+                    Refresh();
                 }
             }
         }
@@ -175,6 +179,7 @@ public class InventoryUI : MonoBehaviour
                     player.Drop(bandaid);
                     Backpack.ReduceWeight(rendered.GetComponent<Item>());
                     Backpack.ReduceCount(rendered.GetComponent<Item>());
+                    Refresh();
                 }
             }
         }
