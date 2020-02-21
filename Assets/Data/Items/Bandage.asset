@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bandage
   m_EditorClassIdentifier: 
   Name: Bandage
-  Description: It's a bandage
+  Description: It's a bandage. +50 Energy.
   Weight: 0.1
   Sprite: {fileID: 21300000, guid: 628e558e62b7145488cdfc4cea3c26f3, type: 3}
   Actions:

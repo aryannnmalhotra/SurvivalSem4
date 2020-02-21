@@ -8,7 +8,7 @@ public class HungerSystem : MonoBehaviour
     private HealthSystem healthSystem;
     private void Start()
     {
-        InvokeRepeating("UpdateHungerLevel", 5.0f, 5.0f);
+        InvokeRepeating("UpdateHungerLevel", 10.0f, 10.0f);
     }
     private void Update()
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pineapple
   m_EditorClassIdentifier: 
   Name: Pineapple
-  Description: It's a pineapple
+  Description: It's a pineapple.+Health. -Hunger.
   Weight: 0.5
   Sprite: {fileID: 21300000, guid: 31531a963e391bd428835b8a1c5ebdd3, type: 3}
   Actions:

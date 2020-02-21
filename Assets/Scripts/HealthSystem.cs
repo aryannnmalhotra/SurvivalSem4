@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    private int health = 50;
-    public int GetHealth()
+    private float health = 100;
+    public float GetHealth()
     {
         return health;
     }
-    public void IncreaseHealth(int factor)
+    public void IncreaseHealth(float factor)
     {
         health = Mathf.Clamp(health + factor, 0, 100);
     }
-    public void DecreaseHealth(int factor)
+    public void DecreaseHealth(float factor)
     {
         health = Mathf.Clamp(health - factor, 0, 100);
     }

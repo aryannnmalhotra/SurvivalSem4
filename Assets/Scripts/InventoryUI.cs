@@ -106,9 +106,9 @@ public class InventoryUI : MonoBehaviour
     }
     public void UseObj()
     {
-        if (modelName.text == "NA")
-            Debug.Log("No object selected to be used");
-        else
+        //if (modelName.text == "NA")
+            //Debug.Log("No object selected to be used");
+        //else
         {
             var items = Backpack.GetItems();
             foreach (var item in items)
@@ -125,8 +125,8 @@ public class InventoryUI : MonoBehaviour
     }
     public void DropObj()
     {
-        if (modelName.text == "NA")
-            Debug.Log("No object selected to be dropped");
+        //if (modelName.text == "NA")
+            //Debug.Log("No object selected to be dropped");
         if (modelName.text == "Pineapple")
         {
             var items = Backpack.GetItems();
@@ -160,7 +160,7 @@ public class InventoryUI : MonoBehaviour
             var items = Backpack.GetItems();
             foreach (var item in items)
             {
-                //if (item.Key == modelName.text && item.Value > 0)
+                if (item.Key == modelName.text && item.Value > 0)
                 {
                     player.Drop(gun);
                     Backpack.ReduceWeight(rendered.GetComponent<Item>());
