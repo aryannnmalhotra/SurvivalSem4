@@ -9,7 +9,7 @@ public class WinOrLose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (DayNight.DayCounter == 8)
+        if (DayNight.DayCounter >7)
         {
             victory.SetActive(true);
         }

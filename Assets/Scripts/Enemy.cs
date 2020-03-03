@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
     }
     void Walking()
     {
+        energyLevel = 100;
         anim.SetBool("isWalk", true);
         isWalk = true;
         panel.SetActive(true);
@@ -96,6 +97,10 @@ public class Enemy : MonoBehaviour
         {
             soundPlayer.PlayOneShot(para);
         }
+    }
+    void Dead()
+    {
+         deadBoard.SetActive(true);
     }
     // Update is called once per frame
     void Update()
@@ -194,7 +199,7 @@ public class Enemy : MonoBehaviour
             {
                 anim.SetBool("isDead", true);
                 minimapPointer.SetActive(false);
-                deadBoard.SetActive(true);
+                Invoke("Dead", 1.6f);
                 panel.SetActive(false);
             }
         }

@@ -20,6 +20,7 @@ public class Scenes : MonoBehaviour
     public void onRestart()
     {
         SceneManager.LoadScene("Terrain");
+        DayNight.DayCounter = 1;
     }
     // Update is called once per frame
     void Update()

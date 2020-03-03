@@ -98,7 +98,7 @@ public class InventoryUI : MonoBehaviour
             if (rendered)
                 Destroy(rendered);
             rendered = Instantiate(bandaid) as GameObject;
-            rendered.transform.position = new Vector3(0, 0f, 3.02f);
+            rendered.transform.position = new Vector3(0, 0.25f, 4.02f);
             var item = rendered.GetComponent<Item>();
             modelName.text = item.Data.Name;
             desc.text = item.Data.Description;

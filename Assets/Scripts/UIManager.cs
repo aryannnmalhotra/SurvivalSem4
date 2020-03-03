@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         }
         if (Player.isAlive == false && DayNight.DayCounter < 8)
         {
-            Invoke("End", 3);
+            Invoke("End", 4);
         }
     }
     void End()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DayNight : MonoBehaviour
 {
-    public static float DayCounter=1;
+    public static float DayCounter;
     public float DayTimeLength;
     public float NightTimeLength;
     public bool IsDayTime;
@@ -15,6 +15,10 @@ public class DayNight : MonoBehaviour
     void Start()
     {
 
+    }
+    private void Awake()
+    {
+        DayCounter = 1;
     }
     void Update()
     {

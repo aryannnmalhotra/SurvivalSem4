@@ -60,7 +60,7 @@ public class PlayerAttck : MonoBehaviour
     }
     void DecHealth(int counter, int factor)
     {
-        if (counter % 3 == 0)
+        if (counter % 6 == 0)
         {
             go.DecreaseHealth(factor);
         }
