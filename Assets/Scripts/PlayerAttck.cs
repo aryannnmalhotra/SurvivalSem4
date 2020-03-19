@@ -14,11 +14,9 @@ public class PlayerAttck : MonoBehaviour
     {
         if (other.CompareTag("Parasite"))
         {
-            Debug.Log("In contact with a parasite");
             go = other.gameObject.GetComponent<HealthSystem>();
             if (!isLeg)
             {
-                Debug.Log("Parasite punch");
                 zLeg = 0;
                 zPun = 0;
                 pPun ++;
@@ -27,7 +25,6 @@ public class PlayerAttck : MonoBehaviour
             }
             else
             {
-                Debug.Log("Parasite Kick");
                 zLeg = 0;
                 zPun = 0;
                 pPun = 0;
@@ -40,7 +37,6 @@ public class PlayerAttck : MonoBehaviour
             go = other.gameObject.GetComponent<HealthSystem>();
             if (!isLeg)
             {
-                Debug.Log("Zombie punch");
                 zLeg = 0;
                 zPun ++;
                 pPun = 0;
@@ -49,7 +45,6 @@ public class PlayerAttck : MonoBehaviour
             }
             else
             {
-                Debug.Log("Zombie kick");
                 zLeg ++;
                 zPun = 0;
                 pPun = 0;

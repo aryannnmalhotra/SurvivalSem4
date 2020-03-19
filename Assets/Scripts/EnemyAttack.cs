@@ -13,19 +13,19 @@ public class EnemyAttack : MonoBehaviour
         {
             if (isZombie)
             {
-                if (Enemy.isHAttack == true)
+                if (EnemyTasks.isHAttack == true)
                 {
                     //Debug.Log("HeavyAttack");
                     playerHealth.DecreaseHealth(8);
                 }
-                else if (Enemy.isLAttack == true)
+                else if (EnemyTasks.isLAttack == true)
                 {
                     playerHealth.DecreaseHealth(3);
                 }
             }
             else
             {
-                if (Enemy.isAttack == true)
+                if (EnemyTasks.isAttack == true)
                 {
                     playerHealth.DecreaseHealth(1);
                 }
